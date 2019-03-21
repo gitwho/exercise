@@ -42,21 +42,6 @@ function sum (...arg) {
 let r = sum(1,2,3,4);
 console.log(r);
 
-// ---
-// class 的实现
-let objx = {};
-Object.defineProperty(objx, 'PI', {
-    enumerable: true, // 是否可见
-    writable: true, // 能否重新赋值
-    configurable: true, // 是否可删除
-    get(){
-
-    },
-    set(newVal){
-        
-    }
-})
-
 
 // ----
 
