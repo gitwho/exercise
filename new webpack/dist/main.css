@@ -1,0 +1,13 @@
+body {
+  background: #fdea34;
+}
+body div {
+  color: red;
+  width: 100px;
+  height: 100px;
+  background: green;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background: url(cbc0e0202ce2feb05cf07b6de6d9bafa.png);
+}
+
