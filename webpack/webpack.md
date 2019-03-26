@@ -25,3 +25,9 @@
     html插件 打包html 并且把打包后的文件进行引入
 
     yarn add html-webpack-plugin
+
+
+
+
+## 各种插件    
+copy-webpack-plugin 
