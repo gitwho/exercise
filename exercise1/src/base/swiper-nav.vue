@@ -11,12 +11,13 @@ export default {
 
     }
   },
-  computed() {
-    this.getSwiperData
+  mounted() {
+    this.getSwiperData()
   },
   methods: {
     getSwiperData() {
-
+      console.log('sdfj');
+      // axios.get('/api/index.json'?city=' + this.city)
     }
   }
 }
