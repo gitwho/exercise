@@ -10,9 +10,9 @@
 
 
 btn.addEventListener('click', function() {
-  // 动态加载js  import()  草案中
+  // 动态加载js  import()  草案中 执行后返回promise
   import('./use').then(data => {
     console.log(data.default);
-    
   })
 })
+// 实现react中怎样异步加载组件
