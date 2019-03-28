@@ -8,7 +8,7 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
+    filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -22,6 +22,9 @@ module.exports = {
           options: {
             presets: [
               "@babel/preset-env"
+            ],
+            plugins: [
+              '@babel/plugin-syntax-dynamic-import'
             ]
           }
         }
