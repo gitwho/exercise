@@ -11,7 +11,7 @@
 <script>
 import Location from '@/base/location'
 import SwiperNav from '@/base/swiper-nav'
-
+import axios from 'axios'
 
 export default {
   data() {
@@ -19,9 +19,17 @@ export default {
 
     }
   },
+  mounted(){
+    this.getIndexData();
+  },
   methods: {
     chooseCity() {
       this.$router.push('/city')
+    },
+    getIndexData() {
+      axios.get('./api/index.json').then(function(res){
+        console.log(res);
+      })
     }
   },
   components: {

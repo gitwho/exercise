@@ -17,7 +17,7 @@ export default {
   methods: {
     getSwiperData() {
       console.log('sdfj');
-      // axios.get('/api/index.json'?city=' + this.city)
+      axios.get('/api/index.json'?city=' + this.city)
     }
   }
 }
