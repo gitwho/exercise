@@ -4,7 +4,7 @@
       <input class="search" type="text" placeholder="输入城市">
       <div class="location" @click="chooseCity">选择城市</div>
     </div>
-    <swiper-nav></swiper-nav>
+    <swiper-nav :swiperList="swiperList"></swiper-nav>
   </div>
 </template>
 
@@ -16,7 +16,9 @@ import axios from 'axios'
 export default {
   data() {
     return {
-
+      swiperList: [],
+      iconList: [],
+      recommendList: []
     }
   },
   mounted(){
@@ -27,8 +29,16 @@ export default {
       this.$router.push('/city')
     },
     getIndexData() {
-      axios.get('./api/index.json').then(function(res){
-        console.log(res);
+      axios.get('./api/index').then(function(res){
+        console.log(res.data);
+        let datas = res.data;
+        if (datas.errno != 0) {
+          console.log('error');
+          return
+        }
+        this.swiperList = datas.data.data.swiperList;
+        this.iconList = datas.data.data.iconList;
+        this.recommendList = datas.data.data.recommendList;
       })
     }
   },

@@ -12,7 +12,12 @@ const portfinder = require('portfinder')
 
 const express = require('express')
 const app = express();
-var appData = require('../static/mock');
+var indexData = require('../static/mock/index.json');
+var cityData = require('../static/mock/city.json')
+var detailData = require('../static/mock/detail.json')
+var apiRoutes = express.Router()
+app.use('/api', apiRoutes)
+
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -26,6 +31,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
+    before(app) {
+      app.get('/api/index', (req, res) => {
+        res.json(indexData)//接口返回json数据
+      })
+
+    },
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
