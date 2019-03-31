@@ -1,0 +1,9 @@
+{
+  "name": "fz.webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "fz-pack": "./bin/fz-pack.js"
+  }
+}
