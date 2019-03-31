@@ -29,17 +29,17 @@ export default {
       this.$router.push('/city')
     },
     getIndexData() {
+      var _this = this;
       axios.get('./api/index').then(function(res){
         console.log(res.data);
         let datas = res.data;
-        if (datas.errno != 0) {
-          console.log('error');
-          return
-        }
-        this.swiperList = datas.data.data.swiperList;
-        this.iconList = datas.data.data.iconList;
-        this.recommendList = datas.data.data.recommendList;
+        // console.log(datas.data.swiperList)
+        _this.swiperList = datas.data.swiperList;
+        _this.iconList = datas.data.iconList;
+        _this.recommendList = datas.data.recommendList;
+        console.log(_this.swiperList)
       })
+
     }
   },
   components: {
