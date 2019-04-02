@@ -5,12 +5,14 @@
       <div class="location" @click="chooseCity">选择城市</div>
     </div>
     <swiper-nav :swiperList="swiperList"></swiper-nav>
+    <icon-nav :list="iconList"></icon-nav>
   </div>
 </template>
 
 <script>
 import Location from '@/base/location'
 import SwiperNav from '@/base/swiper-nav'
+import iconNav from '@/base/icon-nav'
 import axios from 'axios'
 
 export default {
@@ -44,7 +46,8 @@ export default {
   },
   components: {
     Location,
-    SwiperNav
+    SwiperNav,
+    iconNav
   }
 }
 </script>
