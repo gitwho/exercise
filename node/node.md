@@ -5,3 +5,13 @@
  - 提供简单 高性能服务器 （cpu密集 计算 i/o密集 文件读取）
  - 分配单位 靠的是进程 
  - 
+
+
+ - vscode 配置
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "my debugger",
+      "program": "${file}",
+      "cwd": "$cwd"
+    }
