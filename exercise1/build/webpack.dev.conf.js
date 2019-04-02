@@ -35,6 +35,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       app.get('/api/index', (req, res) => {
         res.json(indexData)//接口返回json数据
       })
+      app.get('/api/city', (req, res) => {
+        res.json(cityData)
+      })
 
     },
     clientLogLevel: 'warning',
