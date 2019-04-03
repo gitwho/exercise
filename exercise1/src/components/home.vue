@@ -2,7 +2,7 @@
   <div>
     <div class="nav">
       <input class="search" type="text" placeholder="输入城市">
-      <div class="location" @click="chooseCity">选择城市</div>
+      <div class="location" @click="chooseCity">{{city}}</div>
     </div>
     <swiper-nav :swiperList="swiperList"></swiper-nav>
     <icon-nav :list="iconList"></icon-nav>
@@ -14,6 +14,7 @@ import Location from '@/base/location'
 import SwiperNav from '@/base/swiper-nav'
 import iconNav from '@/base/icon-nav'
 import axios from 'axios'
+import { mapState } from 'vuex';
 
 export default {
   data() {
@@ -23,8 +24,12 @@ export default {
       recommendList: []
     }
   },
+  computed: {
+    ...mapState(['city'])
+  },
   mounted(){
-    this.getIndexData();
+    this.getIndexData()
+
   },
   methods: {
     chooseCity() {
