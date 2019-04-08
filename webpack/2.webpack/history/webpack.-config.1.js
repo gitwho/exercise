@@ -84,7 +84,7 @@ module.exports = {
         enforce: 'post'
       },
       {
-        test: /.\less$/,
+        test: /\.less$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader']
       }
     ]

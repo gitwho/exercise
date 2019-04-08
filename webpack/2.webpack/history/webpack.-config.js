@@ -52,10 +52,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: MiniCssExtractPlugin.loader,
-        enforce: 'post'
+        enforce: 'post' // 后置，后执行
       },
       {
-        test: /.\less$/,
+        test: /\.less$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader']
       }
       // {

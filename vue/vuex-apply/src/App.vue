@@ -23,8 +23,11 @@
     <br/>
  -->
     {{u}}
-    <button @click="change">修改</button>
+    <button @click="change">修改mutations</button>
     
+    <button @click="change2">修改actions</button>
+
+    <button @click="change3">修改actions</button>
   </div>
 </template>
 
@@ -35,12 +38,16 @@
 // 如果增加子模块 namespace：false， 只有状态需要通过 模块.属性，（eg： {{this.$store.state.user.myName}}；其他：{{this.$store.getters.getChildName}}）
 // 如果 namespace：true，就要使用 模块取属性， 其他：...mapGetters('user', ['getChildName'])
 
-import {mapState, mapGetters, mapMutations} from 'vuex'
+import {mapState, mapGetters, mapMutations, mapActions} from 'vuex'
 // console.log(mapState(['name', 'lesson'])); // 对象 key：value
 
 // import {createNamespacedHelpers} from 'vuex'
 // let {mapState} = createNamespacedHelpers('user')
 // ...mapState(['myName'])
+
+// 在vuex中如果想要使用模块， 最好使用辅助方法，限制模块作用域
+// 如果直接修改状态 可以 commit mapMutation
+// 如果异步修改状态 可以 dispatch mapActions
 
 export default {
   computed: {
@@ -55,8 +62,23 @@ export default {
   },
   methods: {
     ...mapMutations('user', ['change_user']),
+    ...mapActions('user', ['change_user']),
     change() {
+      // 方法一（优选）
       this['change_user']('jw')
+      // 方法二
+      // this.$store.commit('user/change_user', 'jw')
+    },
+    change2() {
+      // 法一（优选）
+      this['change_user']('jw')
+      // 法二
+      // this.$store.dispatch('user/change_user', 
+      // 'jw2')
+    },
+    // 最好不用
+    change3() {
+      this.$store.state.user.myName = '别用这方法'
     }
   }
 }

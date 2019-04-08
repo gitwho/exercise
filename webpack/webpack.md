@@ -33,6 +33,8 @@
 webpack webpack-cli webpack-dev-server
 @babel/core babel-loader @babel/preset-env @babel/preset-react 
 html-webpack-plugin 
-
+mini-css-extract-plugin
+optimize-css-assets-webpack-plugin
+uglifyjs-webpack-plugin
 
 copy-webpack-plugin 

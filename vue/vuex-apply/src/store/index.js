@@ -13,6 +13,7 @@ export default new vuex.Store({
   modules: {
     user
   },
+  strict: process.env.NODE_ENV !== 'production', //校验更改状态的合法性
   state,
   getters,
   mutations,

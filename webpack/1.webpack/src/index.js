@@ -4,7 +4,7 @@ console.log(str);
 
 require('./index.css')
 
-@log
+@log // 装饰类的装饰器
 class A {
     a = 1;
 }
