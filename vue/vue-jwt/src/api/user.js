@@ -8,3 +8,19 @@ export const getUser = () => {
   })
 }
 
+export const login = (username) => {
+  return axios.request({
+    url: '/login',
+    method: 'post',
+    data: {
+      username 
+    }
+  })
+}
+
+export const validate = () => {
+  return axios.request({
+    url: '/validate',
+    method: 'get'
+  })
+}
