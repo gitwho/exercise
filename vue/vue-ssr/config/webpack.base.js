@@ -3,7 +3,7 @@ let path = require('path');
 let VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  
+  mode: 'production',
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, '../dist')
@@ -16,7 +16,8 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             // 预设
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-syntax-dynamic-import']
           }
         },
         exclude: /node_modules/
