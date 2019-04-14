@@ -5,11 +5,18 @@ let path = require('path');
 let VueServerRenderer = require('vue-server-renderer');
 let app = express();
 
-let serverBundle = fs.readFileSync('./dist/server.bundle.js', 'utf8');
+
+// let serverBundle = fs.readFileSync('./dist/server.bundle.js', 'utf8');
+// 采用json方式 解决 修改前后端页面内容，node node-server.js 就要重启
+let serverBundle = require('./dist/vue-ssr-server-bundle.json');
+let clientManifest = require('./dist/vue-ssr-client-manifest.json');
+
+
 let template = fs.readFileSync('./dist/index.ssr.html', 'utf8');
 // 创建渲染函数
 let render = VueServerRenderer.createBundleRenderer(serverBundle, {
-  template
+  template,
+  clientManifest
 })
 
 app.get('/', (req, res) => {
