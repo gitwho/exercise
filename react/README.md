@@ -3,3 +3,5 @@
   
 ## yarn eject
   将隐藏的内容显示
+
+## 前端 import es6写法， 后端 require 写法
