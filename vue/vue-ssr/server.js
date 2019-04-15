@@ -15,10 +15,10 @@ let render = VueServerRenderer.createRenderer({
   template
 });
 
-
 app.get('/', (req, res) => {
+  // render.renderToString（vm, 回调函数）
   render.renderToString(vm, function(err, html) {
-    res.send(html)
+    res.send(html) 
   })
 })
 

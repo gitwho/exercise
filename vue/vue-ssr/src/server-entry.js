@@ -4,6 +4,7 @@ import createApp from './app'
 export default (context) => {
   return new Promise((resolve, reject) => {
     let {app, router, store} = createApp();
+    console.log(context)
     router.push(context.url) // 跳转路由
     // 如果服务端 启动时 直接访问 /foo  返回的页面永远都是 index.html 需要通过路由跳转到指定路径
     
