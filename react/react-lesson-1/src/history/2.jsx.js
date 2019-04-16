@@ -26,11 +26,13 @@ let ele = (
     <div dangerouslySetInnerHTML={{__html:str}}></div>
   </>
 )
+// ReactDOM.render(ele, window.root)
 
 // 数组可以直接渲染到页面
 // 列表渲染 map 有返回值: forEach无返回值(X)
 let arr = ['吃', '喝', '睡'];
 let newArr = arr.map((item, key) => (<li key={key}>{item}</li>))
+// ReactDOM.render(newArr, window.root)
 
 let obj = (
   <ul>
