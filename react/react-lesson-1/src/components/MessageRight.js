@@ -6,7 +6,6 @@ export default class MessageRight extends Component{
     return (
       <div className="list-group" >
         {this.props.lists.map((list, key) => (
-          
           <MessageItem list={list} key={key} fn={this.props.fn}></MessageItem>
         ))}
       </div>

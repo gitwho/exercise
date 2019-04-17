@@ -44,8 +44,8 @@ export default class MessageBox extends Component{
   }
   render() {
     return (
-      // 提供一个
-      <Provider value={{ r: this.resetClick }}>
+      // 提供的值必须叫value属性， 放了一个对象{r: this.resetClick}
+      <Provider value={{r: this.resetClick}}> 
         <div className="container">
           <div className="panel panel-danger">
             <div className="panel-heading">
@@ -63,3 +63,7 @@ export default class MessageBox extends Component{
     )
   }
 }
+
+// 父传子 靠属性
+// 平级靠 共同的父组件
+// 跨级 靠 Context.js
