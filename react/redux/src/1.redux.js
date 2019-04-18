@@ -35,10 +35,8 @@ function createStore(reducer) {
 // 1.当前组件状态 2. 用户派发的动作
 function reducer(state = initState, action) { 
   switch (action.type) {
-    case 'CHANGE_TITLE_COLOR': 
-    return {...state,title:{...state.title,color:action.color}};
-    case 'CHANGE_CONTENT_COLOR':
-    return {...state,content:{...state.content,content:action.content}}
+    case 'CHANGE_TITLE_COLOR': return {...state,title:{...state.title,color:action.color}};
+    case 'CHANGE_CONTENT_COLOR': return {...state,content:{...state.content,content:action.content}};
   }
   return state;
 }
