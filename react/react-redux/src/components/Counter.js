@@ -4,6 +4,7 @@ import React from 'react'
 import actions from '../store/actions/counter'
 // 需要在使用redux数据的组件上 使用connect方法连接redux
 import {connect} from 'react-redux'
+// import { bindActionCreators } from 'redux';
 
 // window.store = store;
 class Counter extends React.Component{
@@ -33,16 +34,28 @@ class Counter extends React.Component{
   }
 }
 
-let mapStateToProps = (state) => { // state-> store.getState()
-  return {
-    number: state.counter.number
+// let mapStateToProps = (state) => { // state-> store.getState()
+//   return {
+//     number: state.counter.number
+//   }
+// }
+// let mapDispatchToProps = (dispatch) => { // dispatch-> store.dispatch
+//   return {
+//     add: (n) => dispatch(actions.add(n))
+//   }
+// }
+// // connect 方法执行两次后返回一个组件
+// // connect方法 最后一个函数的参数是原来的组件，会把redux中的状态映射到这个组件上
+// export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+
+let bindActionCreators = (actions, dispatch) => {
+  let obj={}
+  for (let key in actions) {
+    obj[key] = (...args) => dispatch(actions[key](...args))
   }
+  return obj
 }
-let mapDispatchToProps = (dispatch) => { // dispatch-> store.dispatch
-  return {
-    add: (n) => dispatch(actions.add(n))
-  }
-}
-// connect 方法执行两次后返回一个组件
-// connect方法 最后一个函数的参数是原来的组件，会把redux中的状态映射到这个组件上
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+// export default connect((state) => ({...state.counter}) , (dispatch) => bindActionCreators(actions, dispatch))(Counter)
+
+// 如果connect 第一次执行的函数， 第二个参数是对象类型， 会自动内部调用bindActionCreator 来实现
+export default connect((state) => ({...state.counter}) ,actions)(Counter)
