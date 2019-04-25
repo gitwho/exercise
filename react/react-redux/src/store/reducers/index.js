@@ -15,7 +15,7 @@ import todo from './todo'
 function combineReducers(reducers) { 
   // 第一次state传的是个undefined，所以要给个默认值，防止state[key]报错，
   // 第二次才穿有值, eg: {counter:{number:0},todo:[]}
-  return function (state={}, action) {  
+  return function (state={}, action) {
     let obj = {};
     for (let key in reducers) {
       obj[key] = reducers[key](state[key], action)
