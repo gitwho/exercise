@@ -11,6 +11,8 @@ import store from './store/index'
 
 
 ReactDOM.render(<Provider store={store}>
-  <Counter />
-  {/* <Todo /> */}
+  <>
+    <Counter />
+    {/* <Todo /> */}
+  </>
 </Provider>, document.getElementById('root'));

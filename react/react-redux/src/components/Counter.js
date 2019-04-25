@@ -20,8 +20,8 @@ class Counter extends React.Component{
   // componentWillUnmount() {
   //   this.unsub();
   // }
-  handleClick() {
-    this.props.add(3)
+  handleClick= () => { // 不可用 handleClick(){}
+    this.props.add(3);  
   }
   render() {
     return (

@@ -2,7 +2,8 @@ import React from 'react'
 import store from '../store/index'
 import actions from '../store/actions/todo'
 
-export default class Counter extends React.Component{
+
+export default class Todo extends React.Component{
   input = React.createRef();
   state = {
     todos: store.getState().todo
@@ -35,3 +36,5 @@ export default class Counter extends React.Component{
     )
   }
 }
+
+// export default connect()()
