@@ -4,7 +4,7 @@ function reducer (state={number: 0}, action) {
   switch(action.type) {
     
     case Types.INCREMENT: return {number: state.number + action.count};
-    case Types.DECREMENT: return {number: state.number - action.count};
+    case Types.DECREMENT: return {number: state.number - action.payload};
   }
   return state
 }

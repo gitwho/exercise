@@ -9,3 +9,9 @@
 
 ## 前端 import es6写法， 后端 require 写法
 
+
+
+## react 插件
+- 打印 redux-logger
+- 延时 redux-thunk
+- redux-promise
