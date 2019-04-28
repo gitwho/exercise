@@ -1,0 +1,13 @@
+
+
+
+const HEADERNAME = 'HEADERNAME'
+const TABACTIONONE = 'TABACTIONONE'
+const SET_TOKEN = 'SET_TOKEN'//设置token
+const DEL_TOKEN = 'DEL_TOKEN'//过期的时候删除token
+export {
+  HEADERNAME,
+  TABACTIONONE,
+  SET_TOKEN,
+  DEL_TOKEN
+}

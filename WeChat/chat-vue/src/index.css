@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin: 0;padding: 0;}
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { _height: 100%; min-width: 1200px;}
+body, div, p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, button, select, th, td, blockquote, pre, code, hr, article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { margin: 0; padding: 0; }
+body, button, input, select, textarea { font: 12px/150% Arial, Verdana, "SimSun"; }
+ol, ul { list-style: none; }
+input { outline: none; }
+em, i { font-style: normal; }
+a { outline: 0; text-decoration: none; color: #333; }
+a:hover { text-decoration: none; color: #ff6600; }
+.clearfix, .layout { zoom: 1; }
+.clearfix:after, .layout:after { visibility: hidden; display: block; content: "."; font-size: 0; height: 0; clear: both; }
+
+
+/*elementUI 样式更改*/
+.el-tabs__nav{
+  width: 300px !important;
+  display: flex;
+}
+.el-tabs__nav>div{
+  flex: 1;
+  padding: 0 !important;
+  border: none !important;
+  margin: 0;
+}
+.tabs{
+  overflow: hidden !important;
+}
+/*#tab-2{*/
+  /*width: 90px !important;*/
+/*}*/
+.el-tabs__nav-wrap{
+  width: 300px !important;
+
+}
+el-tabs__header{
+  overflow: hidden !important;
+}
+.el-tabs__nav-wrap.is-scrollable{
+  padding: 0 !important;
+}
+
+.el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
+  background-color: #333333!important;
+ /*border-right: 1px solid red !important;*/
+}
+.el-tabs--border-card>.el-tabs__header {
+  background-color: #333333 !important;
+  border-bottom: 1px solid #333333 !important;
+}
+.el-tabs--border-card {
+  background:#333333 !important;
+  border: none !important;
+}
+.el-tabs__content{
+  border-top: 1px solid gray;
+  min-height:500px !important;
+}
+.tabsCont[data-v-8913978e] {
+  border:none !important;
+}
+#tab-0{
+  border-right: 1px solid black !important;
+}
+#tab-1{
+  border-right: 1px solid black !important;
+  border-left: 1px solid black !important;
+}
+#tab-2{
+  border-left: 1px solid black !important;
+}
+.el-tabs__item{
+  height: 30px !important;
+}
+.el-tabs__nav{
+  padding-bottom: 10px !important;
+}
+.el-tabs--border-card>.el-tabs__content {
+  padding:0 !important;
+}
+.el-input{
+  /*width: 260px !important;*/
+}
+.el-form-item__content{
+  width: 250px;
+}
