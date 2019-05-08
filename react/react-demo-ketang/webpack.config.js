@@ -7,7 +7,11 @@ module.exports = {
     path: resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
-  
+  resolve: {
+    alias: {
+      "@": resolve('src')
+    }
+  },
   module: {
     rules: [
       {
@@ -16,7 +20,8 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ["@babel/preset-env", "@babel/preset-react"]
+              presets: ["@babel/preset-env", "@babel/preset-react"],
+              plugins: [["@babel/plugin-proposal-decorators",{"legacy": true}], "@babel/plugin-proposal-class-properties", ]
             }
           }
         ],
@@ -31,7 +36,7 @@ module.exports = {
         include: resolve('./src')
       },
       {
-        test: /\.(png|jpg|gif)/,
+        test: /\.(png|jpg|gif|jpeg)/,
         use: ["url-loader"]
       }
     ]

@@ -7,7 +7,7 @@ function createStore(reducer) {
     listeners.forEach(fn => fn())
   }
   dispatch({type: '@INIT'}); // 初始化
-  let subscribe = (fn) => { 
+  let subscribe = (fn) => { // 更新函数
     listeners.push(fn);
     return () => {
       listeners = listeners.filter(x => fn !== x);
