@@ -19,6 +19,7 @@ class App extends React.Component{
               <a className="navbar-brand">头部</a>
             </div>
             <ul className="nav navbar-nav">
+              {/*  */}
               {/* <li><Link to="/">首页</Link></li>
               <li><Link to="/profile">个人中心</Link></li>
               <li><Link to="/user">用户</Link></li>

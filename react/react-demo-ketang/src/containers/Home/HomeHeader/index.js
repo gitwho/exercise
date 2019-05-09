@@ -9,11 +9,15 @@ import {
 export default class HomeHeader extends Component{
   state = {
     showList:false
+<<<<<<< HEAD
   }
   changeCategory = (e) => {
     let category = e.target.dataset.category;
     this.props.changeCategory(category);
   }
+=======
+}
+>>>>>>> 0838e1b400baf3fbc63bed0b60bbe82e030e58a7
   render() {
     return (
       <div className="home-header">
@@ -34,9 +38,15 @@ export default class HomeHeader extends Component{
                   timeout={500}
                   classNames="fade"
                 >
+<<<<<<< HEAD
                   <ul className="home-menus" onClick={this.changeCategory}>
                     <li data-category="react">react</li>
                     <li data-category="vue">vue</li>
+=======
+                  <ul>
+                    <li>react</li>
+                    <li>vue</li>
+>>>>>>> 0838e1b400baf3fbc63bed0b60bbe82e030e58a7
                   </ul>
                 </CSSTransition>
               )
