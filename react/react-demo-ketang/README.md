@@ -21,3 +21,24 @@ loader
 yarn add less less-loader css-loader style-loader url-loader
 html-webpack-plugin
 ```
+
+## 目录结构划分
+```
+src
+  containers 放置页面组件
+  components 放置页面间可共享的共用组件
+      components 放吃组件独享的子组件
+  common 放一些公共的样式等类容
+  images 图片
+  store redux仓库
+        actions
+        reducers
+        actions-types
+        index
+  index.js 入口文件
+  index.html模板文件
+  ```
+
+  ##前后端交互套路
+  1.定义仓库的数据结构
+  2.后台实现接口

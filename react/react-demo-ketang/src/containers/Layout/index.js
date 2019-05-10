@@ -5,10 +5,10 @@ import '@/common/global.less'
 export default class Layout extends Component{
   render() {
     return (
-      <div>
+      <Fragment>
         {this.props.children}
         <Tab />
-      </div>
+      </Fragment>
     )
   }
 }

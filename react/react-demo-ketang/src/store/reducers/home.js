@@ -1,7 +1,8 @@
 import * as types from '../actions-types'
 
 let initState = {
-  category: 'all'
+  category: 'all',
+  sliders: []
 }
 export default function(state=initState, action) {
   switch(action.type) {

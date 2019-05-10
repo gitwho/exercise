@@ -8,11 +8,12 @@ import {
 
 export default class HomeHeader extends Component{
   state = {
-    showList:false
+    menuShow:false
   }
   changeCategory = (e) => {
     let category = e.target.dataset.category;
     this.props.changeCategory(category);
+    this.setState({menuShow:false});
   }
 
   render() {
@@ -20,9 +21,9 @@ export default class HomeHeader extends Component{
       <div className="home-header">
         <div className="header-menu">
           <img src={logo} alt="" />
-          <div onClick={()=>this.setState({showList:!this.state.showList})}>
+          <div onClick={()=>this.setState({menuShow:!this.state.menuShow})}>
             {
-              this.state.showList?<i className="iconfont icon-shanchu"></i>:
+              this.state.menuShow?<i className="iconfont icon-shanchu"></i>:
             <i className="iconfont  icon-ai-kind"></i>
             }  
           </div>
@@ -30,18 +31,17 @@ export default class HomeHeader extends Component{
         
         <TransitionGroup>
             {
-              this.state.showList&&(
+              this.state.menuShow&&(
                 <CSSTransition
                   timeout={500}
                   classNames="fade"
                 >
                   <ul className="home-menus" onClick={this.changeCategory}>
-                    <li data-category="react">react</li>
-                    <li data-category="vue">vue</li>
+                    <li data-category="react" className={this.props.category=="react" ? "active": ""}>react</li>
+                    <li data-category="vue" className={this.props.category=="vue" ? "active": ""}>vue</li>
                   </ul>
                 </CSSTransition>
               )
-
             }
         </TransitionGroup>
       </div>
