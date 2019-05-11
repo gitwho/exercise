@@ -51,6 +51,9 @@ class Counter extends React.Component{
 let bindActionCreators = (actions, dispatch) => {
   let obj={}
   for (let key in actions) {
+    // {
+    //   add: (...args) => dispatch(actions[key](...args))
+    // }
     obj[key] = (...args) => dispatch(actions[key](...args))
   }
   return obj

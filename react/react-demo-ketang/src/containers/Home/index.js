@@ -7,20 +7,23 @@ import './index.less'
 @connect(state=>state.home, actions)
 
 export default class Home extends Component{
+  componentDidMount(){
+    this.props.getSliders();
+  }
   render() {
+    let {category, changeCategory, sliders} = this.props;
     return (
       <Fragment>
         {/* 顶部 */}
         <HomeHeader
-          category={this.props.category}
-          changeCategory={this.props.changeCategory}
+          category={category}
+          changeCategory={changeCategory}
         />
         <div className="main-content">
           {/* 轮播图 */}
-          <HomeSwiper />
+          <HomeSwiper sliders={sliders}/>
         </div>
-        
-        
+
       </Fragment>
     )
   }
