@@ -6,4 +6,24 @@
       height:170px;
     }
   }
+  .dots{
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    display: flex;
+    bottom: 8px;
+    justify-content: center;
+    span{
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      margin-left: 10px;
+      background: #fff;
+      &.active{
+        background: orange;
+      }
+    }
+    
+  }
 }

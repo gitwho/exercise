@@ -46,9 +46,10 @@ src
 4.定义action-types, 修改reducer,并处理此动作
 5.编写action方法，用来调用api方法，请求接口，得到返回的数据，构造函数action派发给仓库
 6.在组件里调用此方法, 并填充仓库
-7. 用此数据渲染组件
+7.用此数据渲染组件
 
 ##
-  fetch ?
-  cors(let cors = require('cors'))
+  1. fetch ?
+  2. cors(let cors = require('cors'))
     解决跨域
+  3. react-swiper使用

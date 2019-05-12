@@ -1,5 +1,5 @@
 import * as types from '../actions-types'
-import {getSliders} from '@/api/home'
+import {getSliders,getLessons} from '@/api/home'
 
 export default {
   changeCategory(category) {
@@ -11,6 +11,19 @@ export default {
         .then(sliders => {
           dispatch({type:types.SET_HOME_SLIDERS, payload:sliders});
         })
+    }
+    
+  },
+  getLessons(){
+    return function(dispatch, getState){
+      console.log(getState());
+      let {category,lessons:{offset,limit,hasMore,loading}} = getState().home;
+      if(hasMore && !loading) {
+        getLessons(category,offset,limit) // 返回promise
+        .then(payload => {
+          dispatch({type:types.SET_HOME_LESSONS, payload});
+        })
+      }
     }
     
   }
