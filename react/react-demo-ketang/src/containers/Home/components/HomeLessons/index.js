@@ -12,8 +12,8 @@ export default class HomeLessons extends Component {
         </div>
         {
           list.map((item, index) => (
-            <div key={index}>
-              <img src={item.post} />
+            <div className="lesson-list" key={index}>
+              <img src={item.poster} />
               <p>{item.title}</p>
               <p>{item.price}</p>
             </div>
