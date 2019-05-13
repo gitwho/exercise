@@ -22,7 +22,26 @@ export default function(state=initState, action) {
         hasMore: action.payload.hasMore,
         offset: state.lessons.offset + action.payload.list.length,
         loading: false
+      }};
+    case types.RESET_HOME_LESSONS: 
+      return {...state, lessons: {
+        ...state.lessons,
+        list: [],
+        hasMore: true,
+        offset: 0,
+        loading: true
+      }
+
+      }  
+    case types.REFRESH_HOME_LESSONS:
+      return {...state, lessons: {
+        ...state.lessons,
+        list: action.payload.list,
+        hasMore: action.payload.hasMore,
+        offset: action.payload.list.length,
+        loading: false
       }}
+
     default: return state;
   }
 }

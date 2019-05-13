@@ -14,6 +14,7 @@ export default class HomeHeader extends Component{
     let category = e.target.dataset.category;
     this.props.changeCategory(category);
     this.setState({menuShow:false});
+    this.props.refreshLessons();
   }
 
   render() {

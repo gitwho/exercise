@@ -26,5 +26,18 @@ export default {
       }
     }
     
+  },
+  refreshLessons(){
+    return function(dispatch, getState){
+      let {category,lessons:{limit,loading}} = getState().home;
+      if(!loading) {
+        // 清空list loading-> true
+        dispatch({type:types.RESET_HOME_LESSONS});
+        getLessons(category,0,limit) // 返回promise
+        .then(payload => {
+          dispatch({type:types.REFRESH_HOME_LESSONS, payload});
+        })
+      }
+    }
   }
 }

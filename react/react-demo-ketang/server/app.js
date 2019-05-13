@@ -16,12 +16,16 @@ app.get('/getLessons/:category', function(req, res){
   let {offset, limit} = req.query;
   offset = isNaN(offset)?0:parseInt(offset); // 偏移量
   limit = isNaN(limit)?5:parseInt(limit); // 每条页数
-  let list = lessons;
+  let list = JSON.parse(JSON.stringify(lessons)); // 复制一份
   let total = list.length;
   if(category != "all") {
-    list = lessons.filter(item => item.category == category)
+    list = list.filter(item => item.category == category)
   }
+
   list = list.slice(offset, offset+limit) // 每次返回的分页数据
+
+  list.forEach((item) => {item.title = item.title + Math.random()}) // 做标记，更新
+  
   res.json({
     list,
     hasMore: total > offset+limit

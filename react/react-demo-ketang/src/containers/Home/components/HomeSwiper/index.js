@@ -6,10 +6,12 @@ export default class HomeSwiper extends Component {
     index: 0
   }
   render() {
-    let swipeOptions={
-      continuous: true,
+    let options={
+      // auto: 1000,
+      // continuous: true,
       callback: (index) => {
         this.setState({index});
+        console.log(index)
       }
     }
     let {sliders} = this.props;
@@ -17,14 +19,13 @@ export default class HomeSwiper extends Component {
       <div className="home-swipe">
         {
           sliders.length>0?(
-            <ReactSwipe className="carousel" swipeOptions={swipeOptions}>
+            <ReactSwipe className="carousel" swipeOptions={options}>
               {
                 sliders.map((item, index) => (
                   <div key={index}>
                     <img src={item} />
                   </div>
                 ))
-                
               }
             </ReactSwipe>
           ):null

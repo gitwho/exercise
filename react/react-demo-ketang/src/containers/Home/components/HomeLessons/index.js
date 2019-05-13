@@ -11,14 +11,17 @@ export default class HomeLessons extends Component {
           <span>全部课程</span>
         </div>
         {
-          list.map((item, index) => (
-            <div className="lesson-list" key={index}>
-              <img src={item.poster} />
-              <p>{item.title}</p>
-              <p>{item.price}</p>
-            </div>
-          ))
+          list.length>0?(
+            list.map((item, index) => (
+              <div className="lesson-list" key={index}>
+                <img src={item.poster} />
+                <p>{item.title}</p>
+                <p>{item.price}</p>
+              </div>
+            ))
+          ):null
         }
+        <div className="loading-more">加载更多</div>
       </div>
     )
   }
