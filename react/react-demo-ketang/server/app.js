@@ -25,9 +25,11 @@ app.get('/getLessons/:category', function(req, res){
   list = list.slice(offset, offset+limit) // 每次返回的分页数据
 
   list.forEach((item) => {item.title = item.title + Math.random()}) // 做标记，更新
+  setTimeout(() => {
+    res.json({
+      list,
+      hasMore: total > offset+limit
+    });
+  }, 1000)
   
-  res.json({
-    list,
-    hasMore: total > offset+limit
-  });
 })

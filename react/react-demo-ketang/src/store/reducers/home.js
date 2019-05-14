@@ -30,9 +30,7 @@ export default function(state=initState, action) {
         hasMore: true,
         offset: 0,
         loading: true
-      }
-
-      }  
+      }};  
     case types.REFRESH_HOME_LESSONS:
       return {...state, lessons: {
         ...state.lessons,
@@ -40,8 +38,12 @@ export default function(state=initState, action) {
         hasMore: action.payload.hasMore,
         offset: action.payload.list.length,
         loading: false
+      }};
+    case types.SET_HOME_LESSONS_LOADING:
+      return {...state,lessons: {
+        ...state.lessons,
+        loading: action.payload
       }}
-
     default: return state;
   }
 }

@@ -19,6 +19,7 @@ export default {
       console.log(getState());
       let {category,lessons:{offset,limit,hasMore,loading}} = getState().home;
       if(hasMore && !loading) {
+        dispatch({type: types.SET_HOME_LESSONS_LOADING, payload:true})
         getLessons(category,offset,limit) // 返回promise
         .then(payload => {
           dispatch({type:types.SET_HOME_LESSONS, payload});

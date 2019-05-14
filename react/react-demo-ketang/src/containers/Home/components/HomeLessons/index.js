@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import Loading from '@/components/Loading'
 import './index.less'
+import Link from 'react-router-dom';
 
 export default class HomeLessons extends Component {
   render() {
@@ -13,15 +15,17 @@ export default class HomeLessons extends Component {
         {
           list.length>0?(
             list.map((item, index) => (
-              <div className="lesson-list" key={index}>
-                <img src={item.poster} />
-                <p>{item.title}</p>
-                <p>{item.price}</p>
-              </div>
+              <Link to={{pathname:`/detail`, state: item}}>
+                <div className="lesson-list" key={index}>
+                  <img src={item.poster} />
+                  <p>{item.title}</p>
+                  <p>{item.price}</p>
+                </div>
+              </Link>
             ))
-          ):null
+          ):<div className="no-data">暂无数据</div>
         }
-        <div className="loading-more">加载更多</div>
+        {loading?<Loading/>:(!hasMore&&<div className="loading-more">到底了</div>)}
       </div>
     )
   }
