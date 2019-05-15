@@ -9,7 +9,8 @@ let initState = {
     offset: 0, // 下一页偏移量
     hasMore: true, // 是否更多
     loading: false // 是否正在加载
-  }
+  },
+  detail: [] 
 }
 export default function(state=initState, action) {
   switch(action.type) {
@@ -43,7 +44,11 @@ export default function(state=initState, action) {
       return {...state,lessons: {
         ...state.lessons,
         loading: action.payload
-      }}
+      }};
+    case types.GET_DETAIL: 
+      console.log('d',action);
+      console.log({...state, detail: action.payload});
+      return {...state, detail: action.payload}
     default: return state;
   }
 }

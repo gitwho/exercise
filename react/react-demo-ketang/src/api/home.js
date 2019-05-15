@@ -7,3 +7,7 @@ export function getSliders() {
 export function getLessons(category,offset,limit) {
   return get(`/getLessons/${category}?offset=${offset}&limit=${limit}`)
 }
+
+export function getDetail(id) {
+  return get(`/getDetail/${id}`)
+}

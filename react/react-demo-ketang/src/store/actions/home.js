@@ -1,5 +1,5 @@
 import * as types from '../actions-types'
-import {getSliders,getLessons} from '@/api/home'
+import {getSliders,getLessons,getDetail} from '@/api/home'
 
 export default {
   changeCategory(category) {
@@ -39,6 +39,15 @@ export default {
           dispatch({type:types.REFRESH_HOME_LESSONS, payload});
         })
       }
+    }
+  },
+  getDetails(id){
+    return function(dispatch, getState) {
+      getDetail(id)
+      .then(detail => {
+        console.log('22',detail);
+        dispatch({type: types.GET_DETAIL, payload:detail[0]})
+      })
     }
   }
 }

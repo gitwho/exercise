@@ -11,6 +11,7 @@ import { loadMore, downRefresh } from '@/util';
 
 export default class Home extends Component{
   componentDidMount(){
+    console.log('+',this.props)
     this.props.getSliders();
     this.props.getLessons();
     loadMore(this.mainContent, this.props.getLessons)

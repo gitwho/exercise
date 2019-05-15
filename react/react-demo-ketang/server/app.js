@@ -33,3 +33,10 @@ app.get('/getLessons/:category', function(req, res){
   }, 1000)
   
 })
+
+let details = require('./mock/lessons');
+app.get('/getDetail/:id', function(req, res){
+  let id = req.params.id;
+  let detail = details.filter(item => item.id == id);
+  res.json(detail)
+})
