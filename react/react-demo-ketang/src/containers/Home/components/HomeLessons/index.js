@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Loading from '@/components/Loading'
 import './index.less'
-import Link from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default class HomeLessons extends Component {
   render() {
@@ -15,7 +15,7 @@ export default class HomeLessons extends Component {
         {
           list.length>0?(
             list.map((item, index) => (
-              <Link to={{pathname:`/detail`, state: item}}>
+              <Link to={{pathname:`/detail/${item.id}`, state: item}} key={index}>
                 <div className="lesson-list" key={index}>
                   <img src={item.poster} />
                   <p>{item.title}</p>
