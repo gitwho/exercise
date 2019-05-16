@@ -4,7 +4,7 @@ import './index.less'
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 import actions from '@/store/actions/home';
-@connect(states=>{console.log('c',state); ;state.home}, actions)
+@connect(state=>state.home, actions)
 
 // detail 是由路由渲染出来的话，会有三个属性 history location match
 export default class Detail extends Component {
@@ -14,21 +14,25 @@ export default class Detail extends Component {
 
   componentDidMount() {
     console.log('qw+' ,this.props);
-    console.log('qw+' ,this.state);
+    
     let lesson = this.state.lesson;
     
     if (!lesson || !lesson.title) {
       let id = this.props.match.params.id;
-      console.log(id);
       this.props.getDetails(id);
       console.log('223',this.props);
     }
     
   }
   render() {
-    // let {lesson} = this.props;
-    // console.log('df',lesson)
-    let lesson = 'a'
+    let {lesson} = this.state;
+    if(!lesson || !lesson.title){
+      console.log('xcdf');
+      lesson = this.props.detail;
+    }
+    
+    console.log('df',this.props)
+    // let {category, changeCategory, sliders, lessons, refreshLessons} = this.props;
     return (
       lesson?(
       <div className="lesson-detail">

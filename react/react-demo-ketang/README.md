@@ -49,8 +49,10 @@ src
 7.用此数据渲染组件
 
 ##
-  1. fetch ?
-  2. cors(let cors = require('cors'))
+  1. fetch: 原生js方法，请求接口，返回promise
+  2. cors(let cors = require('cors')) 
     解决跨域
-  3. react-swiper使用
+  3. react-swipe使用
   4. Link 传参
+  5. withrouter
+  6. !{} == false

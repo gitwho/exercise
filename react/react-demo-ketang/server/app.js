@@ -1,6 +1,6 @@
 let express = require('express');
 let app = express();
-let cors = require('cors')
+let cors = require('cors'); // 解决跨域
 app.listen(3000);
 app.use(cors());
 
