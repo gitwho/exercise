@@ -9,8 +9,8 @@ export default class Profile extends Component{
       <div className="profile">
         <div className="avator">
           <img src={profile}/>
-          <button className="regist">
-            <Link to="/reg">登录</Link>
+          <button className="loginBtn">
+            <Link to="/login">登录</Link>
           </button>
         </div>
       </div>

@@ -6,6 +6,9 @@ import Mine from '@/containers/Mine'
 import Profile from '@/containers/Profile'
 import Layout from '@/containers/Layout'
 import Detail from '@/containers/Detail'
+import Login from '@/containers/Login'
+import Reg from '@/containers/Reg'
+
 import store from './store'
 import {Provider} from 'react-redux'
 
@@ -19,6 +22,8 @@ class App extends Component{
             <Route path="/mine" component={Mine}></Route>
             <Route path="/profile" component={Profile}></Route>
             <Route path="/detail/:id" component={Detail}></Route>
+            <Route path="/login" component={Login}></Route>
+            <Route path="/reg" component={Reg}></Route>
           </Switch>
         </Layout>
       </Router>

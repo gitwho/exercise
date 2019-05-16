@@ -27,7 +27,6 @@ export default class Detail extends Component {
   render() {
     let {lesson} = this.state;
     if(!lesson || !lesson.title){
-      console.log('xcdf');
       lesson = this.props.detail;
     }
     
