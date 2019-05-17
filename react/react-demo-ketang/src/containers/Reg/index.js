@@ -1,7 +1,8 @@
 import React,{Component} from 'react'
 import profile from '@/images/profile.png'
 import {Link} from 'react-router-dom'
-import NavHeader from '@/Components/NavHeader'
+import NavHeader from '@/components/NavHeader'
+import Alert from '@/components/Alert'
 import './index.less'
 import action from '@/store/actions/session'
 import { connect } from 'react-redux';
@@ -25,6 +26,15 @@ export default class Reg extends Component{
           <input ref={ref=>this.password=ref} placeholder="密码" type="password" />
           <Link to="/login">前往登录</Link>
           <button onClick={this.handleSubmit}>注册</button>
+          {
+            (this.props.success || this.props.error)&&(
+              <Alert
+                type={this.props.success?'success':'error'}
+                message={this.props.success || this.props.error}
+              />
+            )
+            
+          }
         </div>
       </div>
     )

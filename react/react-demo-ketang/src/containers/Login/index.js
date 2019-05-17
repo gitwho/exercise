@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import profile from '@/images/profile.png'
 import {Link} from 'react-router-dom'
-import NavHeader from '@/Components/NavHeader'
+import NavHeader from '@/components/NavHeader'
 import './index.less'
 
 export default class Login extends Component{

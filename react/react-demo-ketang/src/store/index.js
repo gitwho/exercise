@@ -5,6 +5,11 @@ import reducers from './reducers'
 import promise from 'redux-promise'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
-let store = createStore(reducers, applyMiddleware(promise, thunk, logger));
+
+import {routerMiddleware} from 'connected-react-router'
+import history from '@/history'
+let routerWare = routerMiddleware(history);
+
+let store = createStore(reducers, applyMiddleware(promise, thunk,routerWare, logger));
 window.store = store;
 export default store;

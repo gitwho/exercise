@@ -13,4 +13,4 @@ export const SET_HOME_LESSONS_LOADING = "SET_HOME_LESSONS_LOADING"
 
 export const GET_DETAIL = "GET_DETAIL"
 
-export const SET_USER = "SET_USER"
+export const SET_SESSION = "SET_SESSION"

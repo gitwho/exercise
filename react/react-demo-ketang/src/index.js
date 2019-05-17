@@ -11,11 +11,13 @@ import Reg from '@/containers/Reg'
 
 import store from './store'
 import {Provider} from 'react-redux'
+import {ConnectedRouter} from 'connected-react-router'
+import history from './history'
 
 class App extends Component{
   render() {
     return (
-      <Router>
+      <ConnectedRouter history={history}>
         <Layout>
           <Switch>
             <Route path="/" exact={true} component={Home}></Route>
@@ -26,7 +28,7 @@ class App extends Component{
             <Route path="/reg" component={Reg}></Route>
           </Switch>
         </Layout>
-      </Router>
+      </ConnectedRouter>
       
     )
   }

@@ -12,6 +12,6 @@ export function post(url, body){
       "Content-Type": "application/json",
       "Accept": "application/json"
     },
-    body: JSON.stringify(data)
-  });
+    body: JSON.stringify(body)
+  }).then(response => response.json());
 }
