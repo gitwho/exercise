@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
 import home from './home'
 import session from './session'
-import {routerReducer} from 'connected-react-router'
-export default combineReducers({
+import {connectRouter} from 'connected-react-router'
+export default (history) => combineReducers({
   home,
   session,
-  router: routerReducer
+  router: connectRouter(history)
 })

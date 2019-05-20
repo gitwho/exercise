@@ -10,6 +10,7 @@ import actions from '@/store/actions/home';
 export default class Detail extends Component {
   state = {
     lesson: this.props.location.state || {}
+    // lesson: {}
   }
 
   componentDidMount() {
