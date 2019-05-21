@@ -13,7 +13,7 @@ export default class Profile extends Component{
         <div className="avator">
           <img src={profile}/>
           {
-            this.props.a?<a>{this.props.a[0].username}</a>:(<button className="loginBtn">
+            this.props.user?<a>{this.props.user.username}</a>:(<button className="loginBtn">
             <Link to="/login">登录</Link>
           </button>)
           }

@@ -48,6 +48,16 @@ src
 6.在组件里调用此方法, 并填充仓库
 7.用此数据渲染组件
 
+## routerMiddleware, push
+仅仅为了跳转路径： 
+routerMiddleware中间件，
+push： actionCreator, 这是一个action创建者，创建出来是为了派发仓库， routerMiddleware 会拦截到这个action然后跳转路径
+
+## ConnectedRouter, routerReducer
+用这两个组件为了把路径信息同步到仓库中，以便从仓库中获取
+ConnectedRouter：监听路径的变化，路径变化后，派发一个动作 @@router/LOCATION_CHANGE，然后右routerReducer 把location放置到仓库中
+
+
 ##
   1. fetch: 原生js方法，请求接口，返回promise
   2. cors(let cors = require('cors')) 

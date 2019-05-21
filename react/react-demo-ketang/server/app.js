@@ -2,13 +2,22 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let session = require('express-session');
 let app = express();
-let cors = require('cors'); // 解决跨域
+// let cors = require('cors'); // 解决跨域
+
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,OPTIONS,DELETE');
+  res.header('Access-Control-Allow-Headers','Content-Type,Accept');
+  res.header('Access-Control-Allow-Credentials','true');
+  next();
+})
+
 app.listen(3000);
-app.use(cors());
+// app.use(cors());
 app.use(bodyParser.json());
 app.use(session({
   resave: true,
-  secret: 'secret',
+  secret: 'secret', //加密
   saveUninitialized: true
 }))
 let sliders = require('./mock/sliders')
@@ -60,17 +69,31 @@ app.post('/reg', function(req, res){
 
 app.post('/login', function(req, res){
   console.log(req.body); // {username password}
-  let user = req.body;
-  let a = users.filter(item => user.username == item.username && user.password == item.password);
-  if (a){
+  let body = req.body;
+  let user = users.find(item => body.username == item.username && body.password == item.password);
+  if (user){
     req.session.user = user; // 
     res.json({
-      a,
+      user,
       success: '登录成功'
     })
   }else {
     res.json({
       error: '登录失败'
+    })
+  }
+})
+
+app.get('/validate', function(req, res) {
+  let user = req.session.user;
+  if(user){
+    res.json({
+      user,
+      success: "用户已登录"
+    })
+  }else{
+    res.json({
+      error: "未登录"
     })
   }
 })

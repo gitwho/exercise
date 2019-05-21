@@ -8,6 +8,7 @@ import Layout from '@/containers/Layout'
 import Detail from '@/containers/Detail'
 import Login from '@/containers/Login'
 import Reg from '@/containers/Reg'
+import PrivateRoute from '@/components/PrivateRoute'
 
 import store from './store'
 import {Provider} from 'react-redux'
@@ -21,8 +22,8 @@ class App extends Component{
         <Layout>
           <Switch>
             <Route path="/" exact={true} component={Home}></Route>
-            <Route path="/mine" component={Mine}></Route>
-            <Route path="/profile" component={Profile}></Route>
+            <PrivateRoute path="/mine" component={Mine}></PrivateRoute>
+            <PrivateRoute path="/profile" component={Profile}></PrivateRoute>
             <Route path="/detail/:id" component={Detail}></Route>
             <Route path="/login" component={Login}></Route>
             <Route path="/reg" component={Reg}></Route>
