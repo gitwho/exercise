@@ -65,5 +65,27 @@ JSX 通过 React.createElement() 生成 虚拟DOM 再变成 真实DOM
   componentWillUnmount: 组件将从页面中移除的时候
 
 ## 生命周期函数使用场景
+  - render函数必须有，不然报错：因为 react Component 内部集成了除了render的全部生命周期函数；
+```
+  shouldComponentUpdate (nextProps, nextState) { 
+    if (nextProps.content !== this.props.content) { // 子组件接收父组件的传值content；如果不同更新子组件，如果相同不更新，提高性能
+      return true;
+    }else {
+      return false;
+    }
+  }
+```
+```
+  componentDidMount(){
+    //写 ajax 请求，不会有任何问题
+    axios.get('/api/todolist')
+    .then(() => {alert('success')})
+    .catch(() => {alert('error')})
+  }
 
+  
+```
+## 本地数据模拟 Charles软件
+
+## react-transition-group 动画实现
 
